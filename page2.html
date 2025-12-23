@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stage 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="logic.js"></script>
+</head>
+
+<body onload="checkAccess(2)">
+<div class="snow"></div>
+
+<div class="card" id="cardBox">
+
+  <div class="santa">🎅</div>
+  <h2>Stage 2</h2>
+  <p>Enter Secret Christmas PIN 🎄</p>
+
+  <input type="password" id="pin" placeholder="Enter PIN">
+  <button onclick="verifyPassword('2222',2,
+`Great job! 🎁
+You're getting closer to the surprise!
+
+Now go and scan QR 3! 🎄`)">
+Unlock Magic ✨</button>
+
+  <p id="error"></p>
+</div>
+
+<div id="successCard">
+  <div style="font-size:60px">🎄</div>
+  <h2>Secret Santa Mission</h2>
+  <p id="missionText" style="white-space:pre-line;"></p>
+</div>
+
+</body>
+</html>
