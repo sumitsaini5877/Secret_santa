@@ -1,7 +1,8 @@
 {
   "cleanUrls": true,
-  "routes": [
-    { "src": "^/$", "dest": "/public/page1.html" },
-    { "src": "/(.*)", "dest": "/public/$1" }
+  "rewrites": [
+    { "source": "/", "destination": "/public/page1.html" },
+    { "source": "/(.*)", "destination": "/public/$1" }
   ]
 }
+
