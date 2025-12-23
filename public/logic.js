@@ -82,3 +82,9 @@ function verifyPassword(correctPin, step, message){
       setTimeout(()=> document.body.classList.remove("shake"),700);
   }
 }
+
+
+function togglePin(){
+  let pin = document.getElementById("pin");
+  pin.type = (pin.type === "password") ? "text" : "password";
+}

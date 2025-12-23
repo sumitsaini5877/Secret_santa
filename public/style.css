@@ -180,3 +180,26 @@ body.shake{
     font-size:70px;
   }
 }
+
+
+/* ---- Show / Hide PIN Styles ---- */
+.input-box{
+  position: relative;
+  width: 85%;
+  margin: auto;
+}
+
+#pin{
+  width: 100%;
+  padding-right: 45px;
+}
+
+.eye-btn{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:20px;
+  user-select:none;
+}
