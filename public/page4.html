@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Final Stage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="logic.js"></script>
+</head>
+
+<body onload="checkAccess(4)">
+<div class="snow"></div>
+
+<div class="card" id="cardBox">
+
+  <div class="santa">🎅</div>
+  <h2>FINAL STAGE 🎉</h2>
+  <p>Enter Final Secret PIN 🎄</p>
+
+  <input type="password" id="pin" placeholder="Enter PIN">
+  <button onclick="verifyPassword('4444',4,
+`🎉 Congratulations!!! 🎉
+
+You completed all Santa challenges!
+Your surprise is waiting... 🎁😉`)">
+Unlock Final Surprise ✨</button>
+
+<p id="error"></p>
+</div>
+
+<div id="successCard">
+  <div style="font-size:60px">🎄</div>
+  <h2>Secret Santa Mission</h2>
+  <p id="missionText" style="white-space:pre-line;"></p>
+</div>
+
+</body>
+</html>
