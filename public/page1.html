@@ -9,7 +9,7 @@
 <body onload="checkAccess(1)">
 <div class="snow"></div>
 
-<div class="card" id="cardBox">
+<!-- <div class="card" id="cardBox">
   <div class="santa">🎅</div>
   <h2>Stage 1</h2>
   <p>Enter PIN</p>
@@ -18,15 +18,44 @@
   <button onclick="verifyPassword('1111',1,
 `Great start! 🎄
 Now go scan QR 2!`)">
-Unlock</button>
+Unlock Magic ✨</button>
 
 <p id="error"></p>
+</div> -->
+
+
+<div class="card" id="cardBox">
+  <div id="gifBox">
+    <img src="https://media.tenor.com/XeBzRsCkXhYAAAAi/santa-hoho.gif">
+  </div>
+
+  <div class="santa">🎅</div>
+  <h2>Santa Secure Access-1</h2>
+  <p>Enter Your Date of Birth (only date and month) 🎄</p>
+  <p>(hint:01-may)</p>
+
+  <input type="password" id="pin" placeholder="Enter Date and month">
+  <button onclick="verifyPassword('02-june',1,
+`Your Secret Santa has a mission for you 🎅
+Follow each clue to discover your gift.
+
+Start in the room where meetings happen,
+Look around the screen — your next hint is waiting there! 📺`)">
+Unlock Magic ✨</button>
+
+  
+  <p id="error"></p>
 </div>
 
 <div id="successCard">
   <div style="font-size:60px">🎄</div>
   <h2>Secret Santa Mission</h2>
-  <p id="missionText"></p>
+
+  <p id="missionText"
+     style="font-size:16px; line-height:22px; white-space:pre-line;">
+  </p>
+
+  <h3>Next Clue PIN : 1111</h3>
 </div>
 
 </body>

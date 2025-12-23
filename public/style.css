@@ -1,7 +1,19 @@
+/* GLOBAL */
+:root{
+  --red:#b00000;
+  --white:#ffffff;
+  --text:#333;
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
 body{
   margin:0;
-  font-family: "Poppins", Arial, sans-serif;
-  background:#b00000;
+  font-family:"Poppins", Arial, sans-serif;
+  background:var(--red);
   color:white;
   height:100vh;
   display:flex;
@@ -13,99 +25,158 @@ body{
 /* Snow animation */
 .snow{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   pointer-events:none;
   background-image:
     radial-gradient(white 2px, transparent 2px),
     radial-gradient(white 2px, transparent 2px),
     radial-gradient(white 2px, transparent 2px);
-  background-size:20px 20px, 30px 30px, 25px 25px;
-  animation:snow 10s linear infinite;
+  background-size:18px 18px, 26px 26px, 22px 22px;
+  animation:snow 9s linear infinite;
 }
 @keyframes snow{
   0%{ background-position:0px 0px }
-  100%{ background-position:0px 1000px }
+  100%{ background-position:0px 1200px }
 }
 
-/* Card */
-.card{
-  width:90%;
-  max-width:380px;
-  background:white;
-  color:#333;
+/* CARD (Mobile First) */
+.card,
+#successCard{
+  width:92%;
+  max-width:420px;
+  background:var(--white);
+  color:var(--text);
   border-radius:18px;
-  padding:25px;
+  padding:22px 18px;
   text-align:center;
-  box-shadow:0 10px 35px rgba(0,0,0,.35);
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
   position:relative;
+  animation:fadeUp .4s ease;
 }
 
-.card h2{ margin:0; color:#b00000; }
+@keyframes fadeUp{
+  from{ transform:translateY(20px); opacity:0;}
+  to{ transform:translateY(0); opacity:1;}
+}
 
-.santa{ font-size:55px; margin-bottom:10px; }
+.card h2,
+#successCard h2{
+  margin:0;
+  color:var(--red);
+  font-size:22px;
+}
 
+
+
+
+#successCard h3{
+  margin:0;
+  color:var(--red);
+  font-size:18px;
+}
+
+.santa{
+  font-size:60px;
+  margin-bottom:8px;
+}
+
+/* INPUT + BUTTON */
 input{
-  width:85%;
+  width:90%;
   padding:12px;
-  border-radius:10px;
-  border:2px solid #b00000;
+  border-radius:12px;
+  border:2px solid var(--red);
   outline:none;
-  font-size:16px;
-  margin-top:15px;
+  font-size:15px;
+  margin-top:12px;
   text-align:center;
 }
 
 button{
-  margin-top:15px;
-  width:100%;
-  padding:12px;
+  margin-top:12px;
+  width:90%;
+  padding:13px;
   border:none;
-  border-radius:10px;
-  background:#b00000;
+  border-radius:12px;
+  background:var(--red);
   color:white;
   font-size:16px;
   font-weight:600;
   cursor:pointer;
 }
 
-#error{ margin-top:8px; color:#d00000; font-size:14px; }
-
-/* Shake */
-body.shake{ animation: shake 0.4s; }
-@keyframes shake {
-  0% { transform: translateX(0px); }
-  25% { transform: translateX(-10px); }
-  50% { transform: translateX(10px); }
-  75% { transform: translateX(-10px); }
-  100% { transform: translateX(0px); }
+button:active{
+  transform:scale(.97);
 }
 
+/* ERROR TEXT */
+#error{
+  margin-top:6px;
+  color:#d00000;
+  font-size:14px;
+}
+
+/* FULL SCREEN SHAKE */
+body.shake{
+  animation: shake .35s;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-12px); }
+  50% { transform: translateX(12px); }
+  75% { transform: translateX(-10px); }
+}
+
+/* GIF */
 #gifBox{
   display:none;
   position:absolute;
-  top:-70px;
+  top:-60px;
   left:50%;
   transform:translateX(-50%);
 }
-#gifBox img{ width:80px; }
-
-#successCard{
-  display:none;
-  width:90%;
-  max-width:380px;
-  background:white;
-  color:#333;
-  border-radius:18px;
-  padding:25px;
-  text-align:center;
-  box-shadow:0 10px 35px rgba(0,0,0,.35);
+#gifBox img{
+  width:75px;
 }
 
+/* SUCCESS CARD */
+#successCard{
+  display:none;
+}
+
+/* Typing Cursor */
 .typing-cursor::after{
   content:"|";
   animation: blink .7s infinite;
 }
-@keyframes blink{ 50%{ opacity:0; } }
+@keyframes blink{
+  50%{ opacity:0; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (min-width:600px){
+  body{
+    padding-top:10px;
+  }
+  .card,
+  #successCard{
+    padding:28px 24px;
+  }
+  .card h2,
+  #successCard h2{
+    font-size:26px;
+  }
+  input,button{
+    font-size:17px;
+  }
+}
+
+@media (min-width:900px){
+  .card,
+  #successCard{
+    max-width:480px;
+  }
+  .santa{
+    font-size:70px;
+  }
+}

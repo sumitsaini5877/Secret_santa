@@ -4,17 +4,22 @@ function checkAccess(step){
 
     if(step === 2 && !localStorage.getItem("step1Done")){
         alert("🚫 Scan QR 1 first!");
-        location.href="page1.html";
+       
     }
 
     if(step === 3 && !localStorage.getItem("step2Done")){
         alert("🚫 Scan QR 2 first!");
-        location.href="page2.html";
+        
     }
 
     if(step === 4 && !localStorage.getItem("step3Done")){
         alert("🚫 Scan QR 3 first!");
-        location.href="page3.html";
+        
+    }
+
+    if(step === 5 && !localStorage.getItem("step4Done")){
+        alert("🚫 Scan QR 4 first!");
+        
     }
 }
 
